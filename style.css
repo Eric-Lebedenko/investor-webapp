@@ -1,0 +1,31 @@
+body {
+    font-family: Arial, sans-serif;
+    background: #101626;
+    color: #fff;
+    margin: 0;
+    padding: 0;
+}
+.dashboard {
+    max-width: 600px;
+    margin: 40px auto;
+    background: #171e35;
+    border-radius: 18px;
+    padding: 24px;
+    box-shadow: 0 6px 20px #0e1121;
+}
+h1, h2 {
+    color: #48f7a7;
+}
+table {
+    width: 100%;
+    background: #20294b;
+    border-radius: 8px;
+    margin-bottom: 20px;
+}
+th, td {
+    padding: 8px 12px;
+    text-align: center;
+}
+th {
+    background: #303b60;
+}
