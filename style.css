@@ -1,14 +1,10 @@
-/* Обнуление */
-* { margin:0; padding:0; box-sizing:border-box; }
-
-/* Фон и шрифты */
+/* Сброс */
+* { margin: 0; padding: 0; box-sizing: border-box; }
 body {
   background: #000;
   color: #fff;
-  font-family: sans-serif;
+  font-family: 'Inter', sans-serif;
 }
-
-/* Навигация */
 .nav {
   background: #111;
   padding: 1rem;
@@ -17,48 +13,71 @@ body {
 .nav__link {
   color: #fff;
   text-decoration: none;
-  margin: 0 1rem;
+  font-size: 1.2rem;
 }
-
-/* Секция дашборда */
 .dashboard {
   padding: 2rem;
 }
 .dashboard__title {
-  font-size: 2rem;
-  margin-bottom: 1.5rem;
   text-align: center;
+  font-size: 2.5rem;
+  margin-bottom: 2rem;
 }
-
-/* Грид трёх колонок, адаптив */
-.dashboard__grid {
-  display: grid;
-  gap: 1.5rem;
-  grid-template-columns: 1fr;
+.assets-container {
+  display: flex;
+  gap: 1rem;
+  /* Убираем фиксированную высоту, чтобы не обрезался экран */
+  /* height: 480px; */
 }
-@media (min-width: 768px) {
-  .dashboard__grid {
-    grid-template-columns: repeat(3, 1fr);
-  }
+@media (max-width: 767px) {
+  .assets-container { flex-direction: column; }
 }
-
-/* Карточки */
-.card {
+@media (max-width: 767px) {
+  .assets-container { flex-direction: column; height: auto; }
+}
+.assets-group {
   background: #fff;
   color: #000;
-  border-radius: 8px;
-  box-shadow: 0 2px 6px rgba(0,0,0,0.3);
-  overflow: hidden;
+  border-radius: 12px;
+  flex: 1;
+  padding: 1.5rem;
+  overflow-y: auto;
 }
-.card__header {
+.assets-group h2 {
+  font-size: 1.5rem;
+  margin-bottom: 1rem;
+}
+.asset-list {
+  display: grid;
+  gap: 1rem;
+}
+.asset-card {
   background: #000;
   color: #fff;
-  padding: 0.75rem 1rem;
-  font-size: 1.25rem;
-}
-.card__content {
+  border-radius: 8px;
   padding: 1rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-family: 'Inter', sans-serif;
 }
-.card__content ul {
-  list-style: none;
+.asset-card__symbol {
+  font-weight: 700;
+  font-size: 1.1rem;
+}
+.asset-card__name {
+  font-size: 0.95rem;
+  color: #ccc;
+}
+.asset-card__stats {
+  text-align: right;
+}
+.asset-card__price {
+  font-size: 1rem;
+}
+.asset-card__change.up {
+  color: #0f0;
+}
+.asset-card__change.down {
+  color: #f00;
 }
