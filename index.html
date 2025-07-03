@@ -1,37 +1,44 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="ru">
 <head>
-    <meta charset="UTF-8">
-    <title>InvestMorgan — ИнвестДашборд</title>
-    <link rel="stylesheet" href="style.css">
-    <script src="app.js" defer></script>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Investor WebApp</title>
+  <link rel="stylesheet" href="style.css" />
+  <!-- Chart.js для графика -->
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
 </head>
 <body>
-    <div class="dashboard">
-        <h1>📈 Инвестиционный Дашборд</h1>
-        <div id="user-info"></div>
-        <div class="portfolio">
-            <h2>Мой портфель</h2>
-            <table>
-                <thead>
-                    <tr>
-                        <th>Актив</th>
-                        <th>Кол-во</th>
-                        <th>Текущая цена</th>
-                        <th>Стоимость</th>
-                    </tr>
-                </thead>
-                <tbody id="portfolio-table">
-                    <!-- Здесь будет портфель пользователя -->
-                </tbody>
-            </table>
+
+  <!-- Навигация -->
+  <nav class="nav">
+    <a href="#dashboard" class="nav__link">Инвест-дашборд</a>
+    <!-- остальные ссылки -->
+  </nav>
+
+  <!-- Дашборд -->
+  <section id="dashboard" class="dashboard">
+    <h1 class="dashboard__title">Инвест-дашборд</h1>
+    <div class="dashboard__grid">
+
+      <!-- Карточка Портфель -->
+      <div class="card">
+        <h2 class="card__header">Портфель</h2>
+        <div class="card__content">
+          <p>Общая стоимость: <span id="pf-value">$0.00</span></p>
+          <p>Доходность: <span id="pf-return">0.00%</span></p>
         </div>
-        <div class="analytics">
-            <h2>Аналитика</h2>
-            <div id="analytics-content">
-                <!-- Здесь будут аналитические данные -->
-            </div>
+      </div>
+
+      <!-- Карточка График -->
+      <div class="card">
+        <h2 class="card__header">Доходность за день</h2>
+        <div class="card__content">
+          <canvas id="pf-chart"></canvas>
         </div>
-    </div>
-</body>
-</html>
+      </div>
+
+      <!-- Карточка Макро -->
+      <div class="card">
+        <h2 class="card__header">Макро</h2>
+        <ul class="
