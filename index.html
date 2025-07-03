@@ -1,56 +1,35 @@
 <!DOCTYPE html>
 <html lang="ru">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Investor WebApp</title>
-  <link rel="stylesheet" href="style.css" />
-  <!-- Chart.js для графика -->
-  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+  <!-- Подключаем люксовый шрифт -->
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
   <!-- Навигация -->
   <nav class="nav">
     <a href="#dashboard" class="nav__link">Инвест-дашборд</a>
-    <!-- остальные ссылки -->
   </nav>
 
   <!-- Дашборд -->
   <section id="dashboard" class="dashboard">
     <h1 class="dashboard__title">Инвест-дашборд</h1>
-    <div class="dashboard__grid">
-
-      <!-- Карточка Портфель -->
-      <div class="card">
-        <h2 class="card__header">Портфель</h2>
-        <div class="card__content">
-          <p>Общая стоимость: <span id="pf-value">$0.00</span></p>
-          <p>Доходность: <span id="pf-return">0.00%</span></p>
-        </div>
+    <div id="top-assets" class="assets-container">
+      <div id="section-crypto" class="assets-group">
+        <h2>Топ криптовалют</h2>
+        <div id="crypto-list" class="asset-list"></div>
       </div>
-
-      <!-- Карточка График -->
-      <div class="card">
-        <h2 class="card__header">Доходность за день</h2>
-        <div class="card__content">
-          <canvas id="pf-chart"></canvas>
-        </div>
+      <div id="section-stocks" class="assets-group">
+        <h2>Топ акций</h2>
+        <div id="stocks-list" class="asset-list"></div>
       </div>
-
-      <!-- Карточка Макро -->
-      <div class="card">
-        <h2 class="card__header">Макро</h2>
-        <ul class="card__content" id="macro-list">
-          <li>CPI: <span>–</span></li>
-          <li>Безработица: <span>–</span></li>
-          <li>Ставка ФРС: <span>–</span></li>
-        </ul>
-      </div>
-
     </div>
   </section>
 
-  <script src="app.js"></script>
+  <script src="app.js" defer></script>
 </body>
 </html>
